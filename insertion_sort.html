@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>insertion_sort</title>
+</head>
+<body>
+<script>
+function insertion_sorting_function(array)
+{
+    var total_size_of_array = array.length;
+        for (var x = 1; x < total_size_of_array; x++)
+        {
+            // Choosing the first element in our unsorted subarray
+            var temporary = array[x];
+            // The last element of our sorted subarray
+            var y = x-1;
+            while ((y > -1) && (temporary < array[y]))
+            {
+                array[y+1] = array[y];
+                y--;
+            }
+            array[y+1] = temporary;
+        }
+    return array;
+}
+var array = [15,3,10,16,1,19];
+insertion_sorting_function(array);
+document.write("Sorted Elements: "+array);
+</script>
+</body>
+</html>
